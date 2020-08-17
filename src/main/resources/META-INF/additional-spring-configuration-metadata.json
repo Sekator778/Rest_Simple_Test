@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "hostname",
+      "type": "java.lang.String",
+      "description": "Description for hostname."
+    },
+    {
+      "name": "application.server.url",
+      "type": "java.lang.String",
+      "description": "Description for application.server.url."
+    }
+  ] }
