@@ -44,11 +44,28 @@ public class PersonController {
         );
     }
 
-    @PutMapping("/")
-    public ResponseEntity<Void> update(@RequestBody Person person) {
+    /**
+     * update
+     */
+    @PatchMapping(path = "/{Id}", consumes = "application/json")
+    public ResponseEntity<Void> patchOrder(@PathVariable("Id") int orderId,
+                                           @RequestBody Person patch) {
+        Person person = persons.findById(orderId).get();
+        if (patch.getLogin() != null) {
+            person.setLogin(patch.getLogin());
+        }
+        if (patch.getPassword() != null) {
+            person.setPassword(patch.getPassword());
+        }
         this.persons.save(person);
         return ResponseEntity.ok().build();
     }
+
+//    @PutMapping("/")
+//    public ResponseEntity<Void> update(@RequestBody Person person) {
+//        this.persons.save(person);
+//        return ResponseEntity.ok().build();
+//    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {
@@ -57,4 +74,6 @@ public class PersonController {
         this.persons.delete(person);
         return ResponseEntity.ok().build();
     }
+
+
 }
