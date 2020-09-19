@@ -3,6 +3,7 @@ package ru.job4j.auth.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import ru.job4j.auth.domain.Person;
 import ru.job4j.auth.repository.PersonRepository;
 
@@ -15,8 +16,10 @@ import java.util.stream.StreamSupport;
 public class PersonController {
 
     private final PersonRepository persons;
+    private RestTemplate rest;
 
-    public PersonController(final PersonRepository persons) {
+    public PersonController(PersonRepository persons) {
+        rest = new RestTemplate();
         this.persons = persons;
     }
 
@@ -73,6 +76,37 @@ public class PersonController {
         person.setId(id);
         this.persons.delete(person);
         return ResponseEntity.ok().build();
+    }
+    /*
+     * Use RestTemplate method
+     */
+
+    /**
+     * Specify parameter as varargs argument
+     */
+    @GetMapping("/rest/{id}")
+    public Person getIngredientById(@PathVariable String id) {
+        rest = new RestTemplate();
+
+        return rest.getForObject("http://localhost:8080/person/{id}",
+                Person.class, id);
+    }
+
+    //
+    // PUT examples
+    //
+    @PutMapping(path = "/rest/{Id}")
+    public void updateIngredient(Person person) {
+        rest.put("http://localhost:8080/person/{id}",
+                person, person.getId());
+    }
+
+    //
+    // POST examples
+    //
+    public Person createIngredient(Person person) {
+        return rest.postForObject("http://localhost:8080/ingredients",
+                person, Person.class);
     }
 
 

@@ -53,7 +53,7 @@ public class ResponseEntityTest {
     /*
      * Alternate implementations...
      * The next three methods are alternative implementations of
-     * getPersonById()***. If you'd like to try
+     * getPersonById***(). If you'd like to try
      * any of them out, comment out the previous method and uncomment
      * the variant you want to use.
      */
