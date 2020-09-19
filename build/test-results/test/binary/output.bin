@@ -1,0 +1,18 @@
+w15:22:43.916 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/person/1
+}15:22:44.030 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+_15:22:44.058 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+x15:22:44.064 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading to [ru.job4j.auth.domain.Person]
+›=== [Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 19 Sep 2020 12:22:44 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]
+w15:22:44.118 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/person/1
+}15:22:44.121 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+_15:22:44.130 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+x15:22:44.131 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading to [ru.job4j.auth.domain.Person]
+Fetched time: 1600518164000
+w15:22:44.160 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/person/1
+}15:22:44.163 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+_15:22:44.173 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+x15:22:44.174 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading to [ru.job4j.auth.domain.Person]
+w15:22:44.190 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/person/1
+}15:22:44.192 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+_15:22:44.203 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+x15:22:44.204 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading to [ru.job4j.auth.domain.Person]
