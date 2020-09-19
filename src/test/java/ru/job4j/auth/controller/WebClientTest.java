@@ -12,7 +12,7 @@ import java.util.Collections;
  */
 
 public class WebClientTest {
-    private static final String API = "http://localhost:8080/person/";
+    private static final String API = "http://localhost:8080/resource/";
     private static final String API_ID = "http://localhost:8080/person/{id}";
 
     @Ignore

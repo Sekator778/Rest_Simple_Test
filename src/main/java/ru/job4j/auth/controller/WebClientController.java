@@ -68,12 +68,12 @@ public class WebClientController {
     }
 
     private WebClient createWebClientWithServerURL() {
-        return WebClient.create("http://localhost:8081");
+        return WebClient.create("http://localhost:8080");
     }
 
     private WebClient createWebClientWithServerURLAndDefaultValues() {
         return WebClient.builder()
-                .baseUrl("http://localhost:8081")
+                .baseUrl("http://localhost:8080")
                 .defaultCookie("cookieKey", "cookieValue")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultUriVariables(Collections.singletonMap("url", "http://localhost:8080"))
