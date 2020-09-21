@@ -1,0 +1,39 @@
+./mvnw spring-boot:run
+
+ctrl + c - for exit
+curl -i http://localhost:8080/api/todo
+При этом вы должны увидеть примерно следующее:
+HTTP/1.1 200
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 May 2018 22:10:19 GMT
+[]
+Нас интересует конечная точка /api/todo , и, если взглянуть на листинг 4.7,
+видно, что метод getToDos возвращает ResponseEntity<Iterable<ToDo>> , коллек­
+цию объектов ToDo . По умолчанию ответ возвращается в формате JSON (см. за­
+головок Content-Type ). В ответе отправляются HTTP-заголовки и состояние.
+***************************************
+Добавим несколько запланированных дел с помощью следующей команды 2 .
+curl -i -X POST -H "Content-Type: application/json" -d'{"description":"Read Spring Boot"}' http://localhost:8080/api/todo
+*******************************************
+Теперь можно, например, модифицировать один из объектов ToDo :
+curl -i -X PUT -H "Content-Type: application/json" -d '{"description":"Take the dog and the cat for a walk", "id":"xxxx-xxxx-xxxx-xxxx"}' http://localhost:8080/api/todo
+HTTP/1.1 201
+Location: http://localhost:8080/api/todo/2d051b67-7716-4ee6-9c45-1de939fa579f
+Content-Length: 0
+Date: Wed, 02 May 2018 22:38:03 GMT
+***************************************************
+Пометим запланированное дело как завершенное. Выполните следующую команду:
+curl -i -X PATCH http://localhost:8080/api/todo/xxxx-xxxx-xxxx-xxxx
+****************************************************
+Значение поля completed теперь равно true . А раз запланированное дело завершено, его можно удалить.
+curl -i -X DELETE http://localhost:8080/api/todo/xxxx-xxxx-xxxx-xxxx
+************************************************************
+Протестируем теперь проверку корректности данных. Выполните следующую
+команду:
+curl -i -X POST -H "Content-Type: application/json" -d '{"description":""}' http://localhost:8080/api/todo
+*************************
+все посмотреть
+ curl -s http://localhost:8080/api/todo?format=json | jq
+
+
