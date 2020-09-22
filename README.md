@@ -10,3 +10,4 @@ And so ...
 todo-jdbc 
 todo-in-memory
 todo-jpa  --- spring jpa
+todo-rest ---- spring data rest
