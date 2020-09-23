@@ -12,3 +12,4 @@ todo-in-memory
 todo-jpa  --- spring jpa
 todo-rest ---- spring data rest
 example --- project reactor
+todo-webflux -- simple webflux with functional endpoints
