@@ -104,10 +104,17 @@ public class PersonController {
     //
     // POST examples
     //
-    public Person createIngredient(Person person) {
-        return rest.postForObject("http://localhost:8080/ingredients",
+    public Person createPerson(Person person) {
+        return rest.postForObject("http://localhost:8080/persons",
                 person, Person.class);
     }
 
-
+    //
+    // another method
+    //
+    @GetMapping("login/{id}")
+    public String findByIdOnlyLoginPerson(@PathVariable int id) {
+        var person = this.persons.findById(id);
+        return person.map(Person::getLogin).orElse("not found person");
+    }
 }

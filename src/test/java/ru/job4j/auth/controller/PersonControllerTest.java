@@ -18,7 +18,12 @@ import ru.job4j.auth.repository.PersonRepository;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -98,5 +103,13 @@ public class PersonControllerTest {
         this.mvc.perform(builder)
                 .andExpect(status().isOk())
                 .andExpect(content().string(""));
+    }
+
+    @Test
+    public void whenFoundStringOnPage() {
+        given(this.persons.findById(1))
+                .willReturn(Optional.of(new Person()));
+        Person person = this.persons.findById(1).get();
+        assertTrue(person.equals(new Person()));
     }
 }
