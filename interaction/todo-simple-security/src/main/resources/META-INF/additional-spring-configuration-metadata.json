@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "todo.authentication.find-by-email-uri",
+      "type": "java.lang.String",
+      "description": "Description for todo.authentication.find-by-email-uri."
+    },
+    {
+      "name": "todo.authentication.username",
+      "type": "java.lang.String",
+      "description": "Description for todo.authentication.username."
+    },
+    {
+      "name": "todo.authentication.password",
+      "type": "java.lang.String",
+      "description": "Description for todo.authentication.password."
+    }
+  ] }
