@@ -64,11 +64,11 @@ public class PersonController {
         return ResponseEntity.ok().build();
     }
 
-//    @PutMapping("/")
-//    public ResponseEntity<Void> update(@RequestBody Person person) {
-//        this.persons.save(person);
-//        return ResponseEntity.ok().build();
-//    }
+    @PutMapping("/")
+    public ResponseEntity<Void> update(@RequestBody Person person) {
+        this.persons.save(person);
+        return ResponseEntity.ok().build();
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {

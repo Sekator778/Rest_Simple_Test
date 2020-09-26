@@ -26,6 +26,12 @@ dependencies {
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.6.RELEASE'
     compile 'org.springframework.boot:spring-boot-starter-webflux'
     compile 'org.projectreactor:reactor-spring:1.0.1.RELEASE'
+//    lombok
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 
 
 }
