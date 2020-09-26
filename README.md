@@ -15,5 +15,5 @@ example --- project reactor
 todo-webflux -- simple webflux with functional endpoints
 ########## Security ##################
 todo-simple-security - ин мемори + своя реализация страниц входа  также реализация ToDoSecurityConfig
-
+todo-oauth2 - авторизация через сторонний сервис в частности гитхаб
 папка interaction -имеет свой ридми
